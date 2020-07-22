@@ -1,5 +1,11 @@
 module Types
   class QueryType < Types::BaseObject
+
+    field :current_user, UserType, null: true 
+
+    def current_user
+      context[:current_user]
+    end
     
     field :all_posts, [PostType], null: true 
 
@@ -10,20 +16,12 @@ module Types
     field :post, PostType, null: true do  
       argument :id, ID, required: true 
     end
-    
-    def user(id:)
-      if context[:current_user] && context[:current_user].admin?
-        User.find_by(id: id, company_id: context[:current_company].id)
-      end
-      rescue ActiveRecord::RecordNotFound 
-        return nil
-    end
-
+  
     def post(id:)
       Post.find(id)
       rescue ActiveRecord::RecordNotFound
         return nil
     end
-    
+
   end
 end
