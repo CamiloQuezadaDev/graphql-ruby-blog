@@ -72,7 +72,7 @@ mutation {
   }
 }
 ```
-Creates new user token:
+Create new user token:
 ```graphql
 mutation {
   signIn(input: {
