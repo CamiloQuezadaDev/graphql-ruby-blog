@@ -32,6 +32,18 @@ Opening the application:
 ```
 open http://localhost:3000/
 ```
+or 
+```
+http://localhost:3000/graphiql
+```
+
+
+
+
+
+Lookin' at the source code huh?
+Be sure to drop me a line! I'd love to chat, whether it's about code, design, sports, coffee, books, or anything in between. 👨🏻‍💻☕️
+               
 ## Interesting Files: 
 
 - [GraphqlController](https://github.com/CamiloQuezadaDev/graphql-ruby-blog/blob/master/app/controllers/graphql_controller.rb) - GraphQL controller (api entry point)
