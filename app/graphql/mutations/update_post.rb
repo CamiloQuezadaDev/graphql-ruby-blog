@@ -9,8 +9,15 @@ class Mutations::UpdatePost < Mutations::BaseMutation
     field :errors, [String], null: false 
 
     def resolve(args)
+        unless context[:current_user]
+            raise Exception, "Sign in to do this action"
+        end
 
         post = Post.find(args[:id])
+
+        unless context[:current_user] == post.user 
+            raise Exception, "You do not have permission"
+        end
 
         
         if post.update(args)
@@ -29,5 +36,8 @@ class Mutations::UpdatePost < Mutations::BaseMutation
 
         rescue ActiveRecord::RecordInvalid => invalid
             return { errors: invalid.record.errors.full_messages, updated: false }
+
+        rescue Exception => e
+            { errors: e.message.split(",") , updated: false}
     end
 end
