@@ -58,7 +58,7 @@ mutation {
   	name: "Leonardo da Vinci",
     credentials: {
       email: "leonardo@example.com",
-      password: "123456"
+      password: "leonardo123"
     }
   } 
   ) {
@@ -78,7 +78,7 @@ mutation {
   signIn(input: {
     credentials: {
       email: "leonardo@example.com",
-      password: "123456"
+      password: "leonardo123"
     }
   } 
   ) {
@@ -89,6 +89,29 @@ mutation {
     }
   success
   token
+  errors
+  }
+}
+```
+Create post:
+```graphql
+mutation {
+  createPost(input: {
+    title:"How to create a GraphQL Blog with Rails"
+    body:"Vitae eaque dolor. Et amet laudantium. Molestiae velit quos."
+  } 
+  ) {
+    post {
+      id
+      title
+      body
+      createdAt
+      updatedAt 
+      postedBy {
+        name
+      }
+    }
+  success
   errors
   }
 }
