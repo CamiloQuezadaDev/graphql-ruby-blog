@@ -48,4 +48,49 @@ open http://localhost:3000/
 - [UpdatePost](https://github.com/CamiloQuezadaDev/graphql-ruby-blog/blob/master/app/graphql/mutations/update_post.rb)  -  mutation
 - [DeletePost](https://github.com/CamiloQuezadaDev/graphql-ruby-blog/blob/master/app/graphql/mutations/delete_post.rb)  -  mutation
 
+## Sample GraphQL Queries
+
+Sign Up:
+
+```graphql
+mutation {
+  signUp(input: {
+  	name: "Leonardo da Vinci",
+    credentials: {
+      email: "leonardo@example.com",
+      password: "123456"
+    }
+  } 
+  ) {
+    user {
+      id 
+      email 
+      name
+    }
+    success
+    errors
+  }
+}
+```
+Create new user token:
+```graphql
+mutation {
+  signIn(input: {
+    credentials: {
+      email: "leonardo@example.com",
+      password: "123456"
+    }
+  } 
+  ) {
+    user {
+      id 
+      email 
+      name
+    }
+  success
+  token
+  errors
+  }
+}
+```
 
