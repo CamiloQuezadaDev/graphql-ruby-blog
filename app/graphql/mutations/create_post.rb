@@ -9,8 +9,15 @@ class Mutations::CreatePost < Mutations::BaseMutation
     field :errors, [String], null: false 
 
     def resolve(args)
+        unless context[:current_user]
+            raise Exception, "Sign in to do this action"
+        end
 
-        post = Post.new(args)
+        post = Post.new(
+            title: args[:title],
+            body: args[:body],
+            user: context[:current_user]
+        )
 
         if post.save
             return {
@@ -24,5 +31,8 @@ class Mutations::CreatePost < Mutations::BaseMutation
 
         rescue ActiveRecord::RecordInvalid => invalid
             return { errors: invalid.record.errors.full_messages, success: false }
+
+        rescue Exception => e
+            { errors: e.message.split(",") , success: false}
     end
 end
