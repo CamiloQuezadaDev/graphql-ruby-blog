@@ -117,4 +117,28 @@ mutation {
   }
 }
 ```
+Update post:
+```graphql
+mutation {
+  updatePost(input: {
+    id:"6"
+    title:"How to create a React App"
+    body:"Vitae eaque dolor. Et amet laudantium. Molestiae velit quos."
+  } 
+  ) {
+    post {
+      id
+      title
+      body
+      createdAt
+      updatedAt 
+      postedBy {
+        name
+      }
+    }
+  updated
+  errors
+  }
+}
+```
 
