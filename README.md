@@ -5,11 +5,10 @@
 
  
 - [x] authentication system 
-- [x] users can create, read, update and delete blogs 
+- [x] users can create, read, update and delete blogs
+- [x] users can comment the blog of other user 
 - [ ] users can save the blog of other user to favorites 
-- [ ] users can comment the blog of other user 
 - [ ] users can clap the blog of other user
-- [ ] users can comment the blog of other user 
 
 ## Installation
 
@@ -36,13 +35,6 @@ or
 ```
 http://localhost:3000/graphiql
 ```
-
-
-
-
-
-Lookin' at the source code huh?
-Be sure to drop me a line! I'd love to chat, whether it's about code, design, sports, coffee, books, or anything in between. 👨🏻‍💻☕️
                
 ## Interesting Files: 
 
@@ -117,8 +109,8 @@ mutation {
     post {
       id
       title
-      body
-      createdAt
+      content
+      postedAt
       updatedAt 
       postedBy {
         name
@@ -141,8 +133,8 @@ mutation {
     post {
       id
       title
-      body
-      createdAt
+      content
+      postedAt
       updatedAt 
       postedBy {
         name
@@ -153,4 +145,29 @@ mutation {
   }
 }
 ```
+Destroy post: 
 
+```graphql
+mutation {
+  destroyPost(input: {
+    id:"6"
+  } 
+  ) {
+    post {
+      id
+      title
+      content
+      postedAt
+      updatedAt 
+      postedBy {
+        name
+      }
+    }
+  deleted
+  errors
+  }
+}
+```
+
+Lookin' at the source code huh?
+Be sure to drop me a line! I'd love to chat, whether it's about code, design, sports, coffee, books, or anything in between. 👨🏻‍💻☕️
