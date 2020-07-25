@@ -1,10 +1,11 @@
-class Mutations::CreatePost < Mutations::BaseMutation 
-    description "Create a new Post"
+class Mutations::AddComment < Mutations::BaseMutation 
+    description "Add Comment to post"
 
-    argument :title, String, required: true 
+    argument :postId, ID, required: true 
     argument :content, String, required: true 
 
-    field :post, Types::PostType, null: true 
+
+    field :comment, Types::CommentType, null: true 
     field :success, Boolean, null: false
     field :errors, [String], null: false 
 
@@ -13,20 +14,23 @@ class Mutations::CreatePost < Mutations::BaseMutation
             raise Exception, "Sign in to do this action"
         end
 
-        post = Post.new(
-            title: args[:title],
+        post = Post.find(args[:post_id])
+
+
+        comment = Comment.new(
             content: args[:content],
+            post: post,
             user: context[:current_user]
         )
 
-        if post.save
+        if comment.save
             return {
-                post: post,
+                comment: comment,
                 success: true, 
-                errors: post.errors.full_messages
+                errors: comment.errors.full_messages
             }
         else 
-            raise ActiveRecord::RecordInvalid, post
+            raise ActiveRecord::RecordInvalid, comment
         end 
 
         rescue ActiveRecord::RecordInvalid => invalid

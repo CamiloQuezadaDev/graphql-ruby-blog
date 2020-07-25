@@ -2,7 +2,7 @@ class Mutations::UpdatePost < Mutations::BaseMutation
     description "Update a new Post"
     argument :id, ID, required: true 
     argument :title, String, required: false
-    argument :body, String, required: false
+    argument :content, String, required: false
 
     field :post, Types::PostType, null: true 
     field :updated, Boolean, null: false
