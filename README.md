@@ -53,6 +53,8 @@ http://localhost:3000/graphiql
 - [UpdatePost](https://github.com/CamiloQuezadaDev/graphql-ruby-blog/blob/master/app/graphql/mutations/update_post.rb)  -  mutation
 - [DeletePost](https://github.com/CamiloQuezadaDev/graphql-ruby-blog/blob/master/app/graphql/mutations/delete_post.rb)  -  mutation
 
+- [AddComment](https://github.com/CamiloQuezadaDev/graphql-ruby-blog/blob/master/app/graphql/mutations/add_comment.rb)  -  mutation 
+
 ## Sample GraphQL Queries
 
 Sign Up:
