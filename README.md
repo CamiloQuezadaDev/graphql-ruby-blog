@@ -3,12 +3,13 @@
 
 ## This Proyect has the following features: 
 
-- authentication system 
-- users can create, read, update and delete blogs 
-- users can save the blog of other user to favorites 
-- users can comment the blog of other user 
-- users can clap the blog of other user 
-- users can comment the blog of other user 
+ 
+- [x] authentication system 
+- [x] users can create, read, update and delete blogs 
+- [ ] users can save the blog of other user to favorites 
+- [ ] users can comment the blog of other user 
+- [ ] users can clap the blog of other user
+- [ ] users can comment the blog of other user 
 
 ## Installation
 
@@ -31,6 +32,18 @@ Opening the application:
 ```
 open http://localhost:3000/
 ```
+or 
+```
+http://localhost:3000/graphiql
+```
+
+
+
+
+
+Lookin' at the source code huh?
+Be sure to drop me a line! I'd love to chat, whether it's about code, design, sports, coffee, books, or anything in between. 👨🏻‍💻☕️
+               
 ## Interesting Files: 
 
 - [GraphqlController](https://github.com/CamiloQuezadaDev/graphql-ruby-blog/blob/master/app/controllers/graphql_controller.rb) - GraphQL controller (api entry point)
@@ -58,7 +71,7 @@ mutation {
   	name: "Leonardo da Vinci",
     credentials: {
       email: "leonardo@example.com",
-      password: "123456"
+      password: "leonardo123"
     }
   } 
   ) {
@@ -78,7 +91,7 @@ mutation {
   signIn(input: {
     credentials: {
       email: "leonardo@example.com",
-      password: "123456"
+      password: "leonardo123"
     }
   } 
   ) {
@@ -89,6 +102,53 @@ mutation {
     }
   success
   token
+  errors
+  }
+}
+```
+Create post:
+```graphql
+mutation {
+  createPost(input: {
+    title:"How to create a GraphQL Blog with Rails"
+    body:"Vitae eaque dolor. Et amet laudantium. Molestiae velit quos."
+  } 
+  ) {
+    post {
+      id
+      title
+      body
+      createdAt
+      updatedAt 
+      postedBy {
+        name
+      }
+    }
+  success
+  errors
+  }
+}
+```
+Update post:
+```graphql
+mutation {
+  updatePost(input: {
+    id:"6"
+    title:"How to create a React App"
+    body:"Vitae eaque dolor. Et amet laudantium. Molestiae velit quos."
+  } 
+  ) {
+    post {
+      id
+      title
+      body
+      createdAt
+      updatedAt 
+      postedBy {
+        name
+      }
+    }
+  updated
   errors
   }
 }
