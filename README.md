@@ -55,7 +55,7 @@ http://localhost:3000/graphiql
 - [DeletePost](https://github.com/CamiloQuezadaDev/graphql-ruby-blog/blob/master/app/graphql/mutations/delete_post.rb)  -  mutation
 
 - [AddComment](https://github.com/CamiloQuezadaDev/graphql-ruby-blog/blob/master/app/graphql/mutations/add_comment.rb)  -  mutation
-- [AddClap] (https://github.com/CamiloQuezadaDev/graphql-ruby-blog/blob/master/app/graphql/mutations/add_clap.rb) - mutation
+- [AddClap](https://github.com/CamiloQuezadaDev/graphql-ruby-blog/blob/master/app/graphql/mutations/add_clap.rb)  -  mutation
 
 ## Sample GraphQL Queries
 
