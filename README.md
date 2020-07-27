@@ -5,11 +5,10 @@
 
  
 - [x] authentication system 
-- [x] users can create, read, update and delete blogs 
+- [x] users can create, read, update and delete blogs
+- [x] users can comment the blog of other user 
 - [ ] users can save the blog of other user to favorites 
-- [ ] users can comment the blog of other user 
 - [ ] users can clap the blog of other user
-- [ ] users can comment the blog of other user 
 
 ## Installation
 
@@ -36,13 +35,6 @@ or
 ```
 http://localhost:3000/graphiql
 ```
-
-
-
-
-
-Lookin' at the source code huh?
-Be sure to drop me a line! I'd love to chat, whether it's about code, design, sports, coffee, books, or anything in between. 👨🏻‍💻☕️
                
 ## Interesting Files: 
 
@@ -61,20 +53,15 @@ Be sure to drop me a line! I'd love to chat, whether it's about code, design, sp
 - [UpdatePost](https://github.com/CamiloQuezadaDev/graphql-ruby-blog/blob/master/app/graphql/mutations/update_post.rb)  -  mutation
 - [DeletePost](https://github.com/CamiloQuezadaDev/graphql-ruby-blog/blob/master/app/graphql/mutations/delete_post.rb)  -  mutation
 
+- [AddComment](https://github.com/CamiloQuezadaDev/graphql-ruby-blog/blob/master/app/graphql/mutations/add_comment.rb)  -  mutation 
+
 ## Sample GraphQL Queries
 
 Sign Up:
 
 ```graphql
 mutation {
-  signUp(input: {
-  	name: "Leonardo da Vinci",
-    credentials: {
-      email: "leonardo@example.com",
-      password: "leonardo123"
-    }
-  } 
-  ) {
+  signUp(input: { name: "Leonardo da Vinci", credentials: { email: "leonardo@example.com", password: "leonardo123" } } ) {
     user {
       id 
       email 
@@ -88,13 +75,7 @@ mutation {
 Create new user token:
 ```graphql
 mutation {
-  signIn(input: {
-    credentials: {
-      email: "leonardo@example.com",
-      password: "leonardo123"
-    }
-  } 
-  ) {
+  signIn(input: { credentials: { email: "leonardo@example.com", password: "leonardo123" } }) {
     user {
       id 
       email 
@@ -109,16 +90,12 @@ mutation {
 Create post:
 ```graphql
 mutation {
-  createPost(input: {
-    title:"How to create a GraphQL Blog with Rails"
-    body:"Vitae eaque dolor. Et amet laudantium. Molestiae velit quos."
-  } 
-  ) {
+  createPost(input: { title:"How to create a GraphQL Blog with Rails", body:"Vitae eaque dolor. Et amet laudantium. Molestiae velit quos." }) {
     post {
       id
       title
-      body
-      createdAt
+      content
+      postedAt
       updatedAt 
       postedBy {
         name
@@ -132,17 +109,12 @@ mutation {
 Update post:
 ```graphql
 mutation {
-  updatePost(input: {
-    id:"6"
-    title:"How to create a React App"
-    body:"Vitae eaque dolor. Et amet laudantium. Molestiae velit quos."
-  } 
-  ) {
+  updatePost(input: { id:"1", title:"How to create a React App", body:"Vitae eaque dolor. Et amet laudantium. Molestiae velit quos."}) {
     post {
       id
       title
-      body
-      createdAt
+      content
+      postedAt
       updatedAt 
       postedBy {
         name
@@ -153,4 +125,43 @@ mutation {
   }
 }
 ```
+Destroy post: 
+```graphql
+mutation {
+  destroyPost(input: { id:"1"}) {
+    post {
+      id
+      title
+      content
+      postedAt
+      updatedAt 
+      postedBy {
+        name
+      }
+    }
+  deleted
+  errors
+  }
+}
+```
 
+Add Comment: 
+```graphql
+mutation {
+  addComment(input: { postId:"1", content:"I love your Post"} ) {
+  comment {
+    id 
+    content
+    commentedBy {
+      id
+      name
+    }
+  }
+    errors
+    success
+  }
+}
+```
+
+Lookin' at the source code huh?
+Be sure to drop me a line! I'd love to chat, whether it's about code, design, sports, coffee, books, or anything in between. 👨🏻‍💻☕️
