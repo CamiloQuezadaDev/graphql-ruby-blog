@@ -127,7 +127,7 @@ Update post:
 ```graphql
 mutation {
   updatePost(input: {
-    id:"6"
+    id:"1"
     title:"How to create a React App"
     body:"Vitae eaque dolor. Et amet laudantium. Molestiae velit quos."
   } 
@@ -148,11 +148,10 @@ mutation {
 }
 ```
 Destroy post: 
-
 ```graphql
 mutation {
   destroyPost(input: {
-    id:"6"
+    id:"1"
   } 
   ) {
     post {
@@ -167,6 +166,28 @@ mutation {
     }
   deleted
   errors
+  }
+}
+```
+Add Comment: 
+
+```graphql
+mutation {
+  addComment(input: {
+    postId:"1",
+    content:"I love your Post"
+  } 
+  ) {
+  comment {
+    id 
+    content
+    commentedBy {
+      id
+      name
+    }
+  }
+    errors
+    success
   }
 }
 ```
