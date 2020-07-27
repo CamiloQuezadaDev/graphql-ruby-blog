@@ -61,14 +61,7 @@ Sign Up:
 
 ```graphql
 mutation {
-  signUp(input: {
-  	name: "Leonardo da Vinci",
-    credentials: {
-      email: "leonardo@example.com",
-      password: "leonardo123"
-    }
-  } 
-  ) {
+  signUp(input: { name: "Leonardo da Vinci", credentials: { email: "leonardo@example.com", password: "leonardo123" } } ) {
     user {
       id 
       email 
@@ -82,13 +75,7 @@ mutation {
 Create new user token:
 ```graphql
 mutation {
-  signIn(input: {
-    credentials: {
-      email: "leonardo@example.com",
-      password: "leonardo123"
-    }
-  } 
-  ) {
+  signIn(input: { credentials: { email: "leonardo@example.com", password: "leonardo123" } }) {
     user {
       id 
       email 
@@ -103,11 +90,7 @@ mutation {
 Create post:
 ```graphql
 mutation {
-  createPost(input: {
-    title:"How to create a GraphQL Blog with Rails"
-    body:"Vitae eaque dolor. Et amet laudantium. Molestiae velit quos."
-  } 
-  ) {
+  createPost(input: { title:"How to create a GraphQL Blog with Rails", body:"Vitae eaque dolor. Et amet laudantium. Molestiae velit quos." }) {
     post {
       id
       title
@@ -126,12 +109,7 @@ mutation {
 Update post:
 ```graphql
 mutation {
-  updatePost(input: {
-    id:"1"
-    title:"How to create a React App"
-    body:"Vitae eaque dolor. Et amet laudantium. Molestiae velit quos."
-  } 
-  ) {
+  updatePost(input: { id:"1", title:"How to create a React App", body:"Vitae eaque dolor. Et amet laudantium. Molestiae velit quos."}) {
     post {
       id
       title
@@ -150,10 +128,7 @@ mutation {
 Destroy post: 
 ```graphql
 mutation {
-  destroyPost(input: {
-    id:"1"
-  } 
-  ) {
+  destroyPost(input: { id:"1"}) {
     post {
       id
       title
@@ -169,15 +144,11 @@ mutation {
   }
 }
 ```
-Add Comment: 
 
+Add Comment: 
 ```graphql
 mutation {
-  addComment(input: {
-    postId:"1",
-    content:"I love your Post"
-  } 
-  ) {
+  addComment(input: { postId:"1", content:"I love your Post"} ) {
   comment {
     id 
     content
