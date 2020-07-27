@@ -7,11 +7,7 @@ module Types
       context[:current_user]
     end
     
-    field :all_posts, [PostType], null: true 
-
-    def all_posts
-      Post.all 
-    end
+    field :all_posts, resolver: Resolvers::PostsSearch
 
     field :post, PostType, null: true do  
       argument :id, ID, required: true 

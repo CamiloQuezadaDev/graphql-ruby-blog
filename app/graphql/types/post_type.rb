@@ -7,7 +7,9 @@ module Types
     field :updated_at, GraphQL::Types::ISO8601Date, null: true 
     field :posted_by, UserType, null: true, method: :user
     field :comment_count, Integer, null: true 
-    field :comments, [CommentType], null: true 
+    field :clap_count, Integer, null: true
+    field :comments, [CommentType], null: true
+    field :claps, [ClapType], null: true 
 
     def posted_at
       object.created_at
@@ -15,6 +17,10 @@ module Types
 
     def comment_count 
       Comment.where(post: object).count 
+    end
+
+    def clap_count 
+      Clap.where(post: object).count 
     end
   end
 end

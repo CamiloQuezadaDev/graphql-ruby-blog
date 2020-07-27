@@ -8,5 +8,6 @@ module Types
     field :delete_post, mutation: Mutations::DeletePost 
 
     field :add_comment, mutation: Mutations::AddComment 
+    field :add_clap, mutation: Mutations::AddClap
   end
 end
