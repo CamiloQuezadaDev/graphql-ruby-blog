@@ -184,5 +184,33 @@ mutation {
 }
 ```
 
+Add Favorite
+
+```graphql
+mutation {
+  addFavorite(input: {postId:"3"}){
+    favorite {
+      title
+    }
+    success
+    errors
+  }
+}
+```
+
+Delete Favorite
+
+```graphql
+mutation {
+  deleteFavorite(input: {postId:"3"}){
+    favorite {
+      title
+    }
+    errors
+    deleted
+  }
+}
+```
+
 Lookin' at the source code huh?
 Be sure to drop me a line! I'd love to chat, whether it's about code, design, sports, coffee, books, or anything in between. 👨🏻‍💻☕️
