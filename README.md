@@ -6,9 +6,10 @@
  
 - [x] authentication system 
 - [x] users can create, read, update and delete blogs
-- [x] users can comment the blog of other user 
+- [x] users can comment the blog of other user
+- [x] users can clap the blog of other user
 - [ ] users can save the blog of other user to favorites 
-- [ ] users can clap the blog of other user
+
 
 ## Installation
 
@@ -53,7 +54,8 @@ http://localhost:3000/graphiql
 - [UpdatePost](https://github.com/CamiloQuezadaDev/graphql-ruby-blog/blob/master/app/graphql/mutations/update_post.rb)  -  mutation
 - [DeletePost](https://github.com/CamiloQuezadaDev/graphql-ruby-blog/blob/master/app/graphql/mutations/delete_post.rb)  -  mutation
 
-- [AddComment](https://github.com/CamiloQuezadaDev/graphql-ruby-blog/blob/master/app/graphql/mutations/add_comment.rb)  -  mutation 
+- [AddComment](https://github.com/CamiloQuezadaDev/graphql-ruby-blog/blob/master/app/graphql/mutations/add_comment.rb)  -  mutation
+- [AddClap](https://github.com/CamiloQuezadaDev/graphql-ruby-blog/blob/master/app/graphql/mutations/add_clap.rb)  -  mutation
 
 ## Sample GraphQL Queries
 
@@ -159,6 +161,22 @@ mutation {
   }
     errors
     success
+  }
+}
+```
+
+Add Clap
+
+```graphql
+mutation {
+  addClap(input: {postId:"3"}){
+    clap {
+      clappedBy {
+        name
+      }
+    }
+    success
+    errors
   }
 }
 ```
