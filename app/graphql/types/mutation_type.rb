@@ -9,5 +9,8 @@ module Types
 
     field :add_comment, mutation: Mutations::AddComment 
     field :add_clap, mutation: Mutations::AddClap
+
+    field :add_favorite, mutation: Mutations::AddFavorite 
+    field :delete_favorite, mutation: Mutations::DeleteFavorite 
   end
 end
