@@ -8,7 +8,7 @@
 - [x] users can create, read, update and delete blogs
 - [x] users can comment the blog of other user
 - [x] users can clap the blog of other user
-- [ ] users can save the blog of other user to favorites 
+- [x] users can save the blog of other user to favorites 
 
 
 ## Installation
@@ -56,6 +56,9 @@ http://localhost:3000/graphiql
 
 - [AddComment](https://github.com/CamiloQuezadaDev/graphql-ruby-blog/blob/master/app/graphql/mutations/add_comment.rb)  -  mutation
 - [AddClap](https://github.com/CamiloQuezadaDev/graphql-ruby-blog/blob/master/app/graphql/mutations/add_clap.rb)  -  mutation
+
+- [AddFavorite](https://github.com/CamiloQuezadaDev/graphql-ruby-blog/blob/master/app/graphql/mutations/add_favorite.rb)  -  mutation
+- [DeleteFavorite](https://github.com/CamiloQuezadaDev/graphql-ruby-blog/blob/master/app/graphql/mutations/delete_favorite.rb)  -  mutation
 
 ## Sample GraphQL Queries
 
@@ -177,6 +180,34 @@ mutation {
     }
     success
     errors
+  }
+}
+```
+
+Add Favorite
+
+```graphql
+mutation {
+  addFavorite(input: {postId:"3"}){
+    favorite {
+      title
+    }
+    success
+    errors
+  }
+}
+```
+
+Delete Favorite
+
+```graphql
+mutation {
+  deleteFavorite(input: {postId:"3"}){
+    favorite {
+      title
+    }
+    errors
+    deleted
   }
 }
 ```
