@@ -16,12 +16,9 @@ class Mutations::DeleteFavorite < Mutations::BaseMutation
 
         current_user = context[:current_user]
 
-        favorite = Favorite.find_by(user: current_user, post: post)
+        favorite = Favorite.find_by!(user: current_user, post: post)
 
-        if favorite.nil? 
-            raise Exception, "Could not find a post in your favorites with this id='#{args[:post_id]}'"
-        end
-
+        
         if favorite.destroy 
             return {
                 favorite: post,
