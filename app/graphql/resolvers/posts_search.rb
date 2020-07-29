@@ -14,10 +14,12 @@ class Resolvers::PostsSearch
     class PostFilter < ::Types::BaseInputObject 
         argument :OR, [self], required: false 
         argument :title_contains, String, required: false 
-        argument :content_contains, String, required: false 
+        argument :content_contains, String, required: false
+
     end
 
     option :filter, type: PostFilter, with: :apply_filter
+
 
     def apply_filter(scope,value)
         branches = normalize_filters(value).reduce { |a, b| a.or(b)}

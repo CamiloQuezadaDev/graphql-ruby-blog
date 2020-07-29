@@ -12,11 +12,7 @@ class Mutations::DeletePost < Mutations::BaseMutation
             raise Exception, "Sign in to do this action"
         end
     
-        post = Post.find(args[:id])
-
-        unless context[:current_user] == post.user 
-            raise Exception, "You do not have permission"
-        end
+        post = Post.find_by!(id: args[:id], user: context[:current_user])
 
         if post.destroy 
             return {

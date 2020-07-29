@@ -8,7 +8,6 @@ class Mutations::AddClap < Mutations::BaseMutation
     field :errors, [String], null: false 
 
     def resolve(args)
-        
         unless context[:current_user]
             raise Exception, "Sign in to do this action"
         end
