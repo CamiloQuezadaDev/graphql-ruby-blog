@@ -1,9 +1,25 @@
 
 # graphql-ruby-blog
+[![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)
+[![forthebadge](https://forthebadge.com/images/badges/made-with-ruby.svg)](https://forthebadge.com)
 
-## This Proyect has the following features: 
+&nbsp;
 
- 
+## Table of contents: 
+* [Proyect features](#proyect-features) 
+* [Proyect Installation](#proyect-installation) 
+* [Interesting Files](#interesting-files) 
+  * [Root files](#root-files) 
+  * [Record types](#record-types)
+  * [Mutations](#mutations)
+  * [Sample GraphQL Queries](#simple-queries)
+  
+  
+&nbsp;
+
+
+## <a name="proyect-features"></a> This Proyect has the following features: 
+
 - [x] authentication system 
 - [x] users can create, read, update and delete blogs
 - [x] users can comment the blog of other user
@@ -11,7 +27,7 @@
 - [x] users can save the blog of other user to favorites 
 
 
-## Installation
+## <a name="proyect-installation"></a> Installation
 
 Install dependencies:
 
@@ -37,7 +53,7 @@ or
 http://localhost:3000/graphiql
 ```
                
-## Interesting Files: 
+## <a name="interesting-files"></a> Interesting Files: 
 
 - [GraphqlController](https://github.com/CamiloQuezadaDev/graphql-ruby-blog/blob/master/app/controllers/graphql_controller.rb) - GraphQL controller (api entry point)
 - [GraphqlTutorialSchema](https://github.com/CamiloQuezadaDev/graphql-ruby-blog/blob/master/app/graphql/graphql_ruby_blog_schema.rb) - the schema definition
@@ -60,7 +76,7 @@ http://localhost:3000/graphiql
 - [AddFavorite](https://github.com/CamiloQuezadaDev/graphql-ruby-blog/blob/master/app/graphql/mutations/add_favorite.rb)  -  mutation
 - [DeleteFavorite](https://github.com/CamiloQuezadaDev/graphql-ruby-blog/blob/master/app/graphql/mutations/delete_favorite.rb)  -  mutation
 
-## Sample GraphQL Queries
+## <a name="simple-queries"></a> Sample GraphQL Queries
 
 Sign Up:
 
