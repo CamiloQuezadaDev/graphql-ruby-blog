@@ -26,6 +26,7 @@
 - [x] users can clap the blog of other user
 - [x] users can save the blog of other user to favorites 
 
+&nbsp;
 
 ## <a name="proyect-installation"></a> Installation
 
@@ -52,7 +53,9 @@ or
 ```
 http://localhost:3000/graphiql
 ```
-               
+
+&nbsp;
+ 
 ## <a name="interesting-files"></a> Interesting Files: 
 
 - [GraphqlController](https://github.com/CamiloQuezadaDev/graphql-ruby-blog/blob/master/app/controllers/graphql_controller.rb) - GraphQL controller (api entry point)
@@ -75,6 +78,8 @@ http://localhost:3000/graphiql
 
 - [AddFavorite](https://github.com/CamiloQuezadaDev/graphql-ruby-blog/blob/master/app/graphql/mutations/add_favorite.rb)  -  mutation
 - [DeleteFavorite](https://github.com/CamiloQuezadaDev/graphql-ruby-blog/blob/master/app/graphql/mutations/delete_favorite.rb)  -  mutation
+
+&nbsp;
 
 ## <a name="simple-queries"></a> Sample GraphQL Queries
 
