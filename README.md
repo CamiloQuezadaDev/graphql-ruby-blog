@@ -13,7 +13,7 @@
   * [Record types](#record-types)
   * [Mutations](#mutations)
   * [Sample GraphQL Queries](#simple-queries)
-* [Inspiration] (#inspitarion) 
+* [Inspiration](#inspiration) 
 
   
   
