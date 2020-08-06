@@ -1,5 +1,5 @@
 
-# graphql-ruby-blog
+# Graphql Ruby Blog
 [![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)
 [![forthebadge](https://forthebadge.com/images/badges/made-with-ruby.svg)](https://forthebadge.com)
 
@@ -13,6 +13,9 @@
   * [Record types](#record-types)
   * [Mutations](#mutations)
   * [Sample GraphQL Queries](#simple-queries)
+* [Inspiration] (#inspitarion) 
+
+  
   
   
 &nbsp;
@@ -232,6 +235,14 @@ mutation {
   }
 }
 ```
+
+&nbsp;
+
+## <a name="inspiration"></a> Inspiration 
+
+This sample app is based on graphql-ruby tutorial from howtographql
+
+&nbsp; 
 
 Lookin' at the source code huh?
 Be sure to drop me a line! I'd love to chat, whether it's about code, design, sports, coffee, books, or anything in between. 👨🏻‍💻☕️
