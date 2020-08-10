@@ -62,23 +62,33 @@ http://localhost:3000/graphiql
  
 ## <a name="interesting-files"></a> Interesting Files: 
 
+
+#### <a name="root-files"></a> Root files 
 - [GraphqlController](https://github.com/CamiloQuezadaDev/graphql-ruby-blog/blob/master/app/controllers/graphql_controller.rb) - GraphQL controller (api entry point)
 - [GraphqlTutorialSchema](https://github.com/CamiloQuezadaDev/graphql-ruby-blog/blob/master/app/graphql/graphql_ruby_blog_schema.rb) - the schema definition
 - [Mutations](https://github.com/CamiloQuezadaDev/graphql-ruby-blog/blob/master/app/graphql/types/mutation_type.rb) - root mutations
 - [Queries](https://github.com/CamiloQuezadaDev/graphql-ruby-blog/blob/master/app/graphql/types/query_type.rb) - root queries
+
+#### <a name="record-types"></a> Record types
+
 - [UserType](https://github.com/CamiloQuezadaDev/graphql-ruby-blog/blob/master/app/graphql/types/user_type.rb) - record type
 - [PostType](https://github.com/CamiloQuezadaDev/graphql-ruby-blog/blob/master/app/graphql/types/post_type.rb) - record type
 
+#### <a name="mutations"></a> Mutations 
 
 - [SignIn](https://github.com/CamiloQuezadaDev/graphql-ruby-blog/blob/master/app/graphql/mutations/sign_in.rb)  -  mutation
 - [SignUp](https://github.com/CamiloQuezadaDev/graphql-ruby-blog/blob/master/app/graphql/mutations/sign_up.rb)  -  mutation
+
 
 - [CreatePost](https://github.com/CamiloQuezadaDev/graphql-ruby-blog/blob/master/app/graphql/mutations/create_post.rb)  -  mutation
 - [UpdatePost](https://github.com/CamiloQuezadaDev/graphql-ruby-blog/blob/master/app/graphql/mutations/update_post.rb)  -  mutation
 - [DeletePost](https://github.com/CamiloQuezadaDev/graphql-ruby-blog/blob/master/app/graphql/mutations/delete_post.rb)  -  mutation
 
 - [AddComment](https://github.com/CamiloQuezadaDev/graphql-ruby-blog/blob/master/app/graphql/mutations/add_comment.rb)  -  mutation
+
+
 - [AddClap](https://github.com/CamiloQuezadaDev/graphql-ruby-blog/blob/master/app/graphql/mutations/add_clap.rb)  -  mutation
+
 
 - [AddFavorite](https://github.com/CamiloQuezadaDev/graphql-ruby-blog/blob/master/app/graphql/mutations/add_favorite.rb)  -  mutation
 - [DeleteFavorite](https://github.com/CamiloQuezadaDev/graphql-ruby-blog/blob/master/app/graphql/mutations/delete_favorite.rb)  -  mutation
