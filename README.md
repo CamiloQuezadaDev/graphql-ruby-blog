@@ -4,11 +4,13 @@
 [![forthebadge](https://forthebadge.com/images/badges/made-with-ruby.svg)](https://forthebadge.com)
 [![forthebadge](https://forthebadge.com/images/badges/for-you.svg)](https://forthebadge.com)
 
+
 &nbsp;
 
 ## Table of contents: 
 * [Proyect features](#proyect-features) 
-* [Proyect Installation](#proyect-installation) 
+* [Proyect Installation](#proyect-installation)
+* [Production Endpoint](#production-endpoint)
 * [Interesting Files](#interesting-files) 
   * [Root files](#root-files) 
   * [Record types](#record-types)
@@ -32,7 +34,7 @@
 
 &nbsp;
 
-## <a name="proyect-installation"></a> Installation
+## <a name="proyect-installation"></a> Installation:
 
 Install dependencies:
 
@@ -57,7 +59,13 @@ or
 ```
 http://localhost:3000/graphiql
 ```
+## <a name="production-endpoint"></a> Production endpoint:
 
+If you want to try the graphql-ruby-blog on production with your favorite IDE like GraphQL Playground or Graphiql App use this endpoint: 
+
+```
+https://graphql-ruby-blog.herokuapp.com/graphql
+```
 &nbsp;
  
 ## <a name="interesting-files"></a> Interesting Files: 
