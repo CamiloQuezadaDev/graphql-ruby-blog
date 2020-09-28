@@ -61,7 +61,7 @@ http://localhost:3000/graphiql
 ```
 ## <a name="production-endpoint"></a> Production endpoint:
 
-If you want to try the graphql-ruby-blog on production with your favorite IDE like GraphQL Playground or Graphiql App use this endpoint: 
+If you want to try out the graphql-ruby-blog on production with your favorite IDE like GraphQL Playground or Graphiql App use this endpoint: 
 
 ```
 https://graphql-ruby-blog.herokuapp.com/graphql
