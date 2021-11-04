@@ -5,11 +5,6 @@
 <div>
 
 </div>
-  [![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)
-  [![forthebadge](https://forthebadge.com/images/badges/made-with-ruby.svg)](https://forthebadge.com)
-  [![forthebadge](https://forthebadge.com/images/badges/for-you.svg)](https://forthebadge.com)
-
-
 
 &nbsp;
 
