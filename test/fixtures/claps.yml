@@ -1,4 +1,13 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+# == Schema Information
+#
+# Table name: claps
+#
+#  id         :integer          not null, primary key
+#  user_id    :integer          not null
+#  post_id    :integer          not null
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
 
 one:
   user: one
