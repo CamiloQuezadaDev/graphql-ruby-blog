@@ -12,20 +12,13 @@ class Mutations::SignIn < Mutations::BaseMutation
 
     user = User.find_by!(email: args[:email])
 
-    if args[:password].empty?
-      raise Exception, "Password can't be Blank."
-    end
-
     unless user.authenticate(args[:password])
       raise Exception, "The submitted form contains errors please verify."
     end
 
-    token = AuthToken.token_for_user(user)
-    context[:session][:token] = token
-
     return {
       user: user,
-      token: token,
+      token: user&.authentication_token,
       errors: user.errors.full_messages.presence,
       success: true
     }

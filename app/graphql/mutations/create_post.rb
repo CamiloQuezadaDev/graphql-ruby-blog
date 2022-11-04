@@ -13,11 +13,8 @@ class Mutations::CreatePost < Mutations::BaseMutation
             raise Exception, "Sign in to do this action"
         end
 
-        post = Post.new(
-            title: args[:title],
-            content: args[:content],
-            user: context[:current_user]
-        )
+        args.merge!({ user: context[:current_user]})
+        post = Post.new(args)
 
         if post.save
             return {

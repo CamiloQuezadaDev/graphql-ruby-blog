@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_23_163105) do
+ActiveRecord::Schema.define(version: 2022_06_24_164547) do
 
   create_table "claps", force: :cascade do |t|
     t.integer "user_id", null: false
@@ -46,6 +46,8 @@ ActiveRecord::Schema.define(version: 2022_06_23_163105) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id"
+    t.string "state", default: "pending"
+    t.string "slug"
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
@@ -56,6 +58,7 @@ ActiveRecord::Schema.define(version: 2022_06_23_163105) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "first_name"
     t.string "last_name"
+    t.string "authentication_token"
   end
 
   add_foreign_key "claps", "posts"

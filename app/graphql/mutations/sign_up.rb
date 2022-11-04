@@ -13,9 +13,10 @@ class Mutations::SignUp < Mutations::BaseMutation
   def resolve(args)
     user = User.new(args)
     
-    if user.save 
+    if user.save
       return {
         user: user,
+        token: user&.authentication_token,
         success: true, 
         errors: user.errors.full_messages
       }
